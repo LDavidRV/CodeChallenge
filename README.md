@@ -1,6 +1,6 @@
 **Finding Pairs with Sum**
 
-A Ruby function that finds pairs of integers from a list that sum to a given value.
+A Ruby function that finds all pairs of numbers in an array that add up to a specified target sum.
 
 **Usage**
 ```
@@ -18,12 +18,14 @@ A list of pairs of integers that sum to the target value.
 
 ***Example***
 ```
-numbers = [1, 9, 5, 0, 20, -4, 12, 16, 7]
-target_sum = 12
-find_pairs_with_sum(numbers, target_sum)
-[[12, 0], [5, 7], [16, -4]]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+target_sum = 10
+pairs = find_pairs_with_sum(numbers, target_sum)
+puts pairs # [[1, 9], [2, 8], [3, 7], [4, 6]]
 ```
 
-**Algorithm**
+**Description**
 
-The algorithm uses a hashmap to store each number in the list and its complement. The complement is calculated as the target sum minus the current number. If the complement exists in the hashmap, it means that a pair has been found and it is added to the result list. The algorithm runs in O(n) time complexity, which is faster than O(n^2).
+The function find_pairs_with_sum takes two arguments: an array of numbers numbers and an integer target_sum. It returns an array of arrays, where each subarray is a pair of numbers from the input array that add up to the target sum.
+
+The implementation uses a hash table to store the numbers and their indices. This allows for efficient constant-time lookups, avoiding duplicates and improving performance. The time complexity of the function is O(n), where n is the number of elements in the input array.
